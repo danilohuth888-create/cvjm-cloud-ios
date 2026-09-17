@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CVJM Cloud installieren</title>
+<style>
+:root{
+  --bg:#f4f6f8; --card:#fff; --text:#14181f; --muted:#667085;
+  --blue:#0a66ff; --blue2:#eaf2ff; --border:#e6e9ee; --ok:#16803b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:grid; place-items:center; padding:24px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--text);
+}
+.card{
+  width:min(470px,100%); background:var(--card); border:1px solid var(--border);
+  border-radius:28px; padding:28px; box-shadow:0 18px 55px rgba(16,24,40,.09);
+}
+.logo{
+  width:78px;height:78px;border-radius:21px;background:#111;color:#fff;
+  display:grid;place-items:center;font-size:34px;font-weight:800;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.1;margin:0 0 7px}
+p{color:var(--muted);line-height:1.5}
+.version{font-size:14px;color:var(--muted);margin-bottom:22px}
+button,a.btn{
+  width:100%; border:0; cursor:pointer; display:block; text-decoration:none;
+  padding:15px 18px; border-radius:15px; font:inherit; font-weight:750;
+  text-align:center; margin-top:12px;
+}
+.primary{background:var(--blue);color:white}
+.secondary{background:var(--blue2);color:#164f9e}
+.info{
+  margin-top:23px;padding:16px;border:1px solid var(--border);border-radius:17px;
+  background:#fafbfc;
+}
+.status{
+  display:none; margin-top:16px; padding:14px; border-radius:14px;
+  background:#fff8e8; border:1px solid #f0d89a; color:#665014; line-height:1.45;
+}
+.steps{font-size:14px;color:#475467;line-height:1.7;margin:8px 0 0;padding-left:20px}
+.small{text-align:center;font-size:12px;color:#98a2b3;margin-top:18px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo">C</div>
+  <h1>CVJM Cloud</h1>
+  <p>Die iPhone-App zur CVJM Cloud.</p>
+  <div class="version">Version 2.14.0</div>
+
+  <button class="primary" id="installBtn">CVJM Cloud installieren</button>
+
+  <a class="btn secondary"
+     href="https://docs.sidestore.io/docs/installation/install"
+     target="_blank" rel="noopener">
+    SideStore noch nicht eingerichtet?
+  </a>
+
+  <div class="status" id="status"></div>
+
+  <section class="info">
+    <strong>So soll es später funktionieren</strong>
+    <ol class="steps">
+      <li>SideStore einmalig einrichten.</li>
+      <li>Diese Website auf dem iPhone öffnen.</li>
+      <li>„CVJM Cloud installieren“ antippen.</li>
+      <li>SideStore öffnet sich und übernimmt die IPA.</li>
+    </ol>
+  </section>
+
+  <div class="small">Funktionsentwurf · CVJM Cloud iOS</div>
+</main>
+
+<script>
+/*
+  Sobald die IPA öffentlich erreichbar ist, diesen Link ersetzen.
+  Beispiel GitHub Release:
+  https://github.com/danilohuth888-create/cvjm-cloud-ios/releases/latest/download/CVJM-Cloud-iOS-2.14.0.ipa
+*/
+const IPA_URL =
+  "https://github.com/danilohuth888-create/cvjm-cloud-ios/releases/latest/download/CVJM-Cloud-iOS-2.14.0.ipa";
+
+const installBtn = document.getElementById("installBtn");
+const statusBox = document.getElementById("status");
+
+function showStatus(text) {
+  statusBox.textContent = text;
+  statusBox.style.display = "block";
+}
+
+installBtn.addEventListener("click", () => {
+  const isiPhone = /iPhone|iPod/i.test(navigator.userAgent);
+  const isiPad = /iPad/i.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (!isiPhone && !isiPad) {
+    showStatus(
+      "Du öffnest diese Seite gerade nicht auf einem iPhone/iPad. " +
+      "Der Installieren-Button öffnet SideStore nur auf iOS. " +
+      "Auf dem PC ist es normal, dass keine App startet."
+    );
+    return;
+  }
+
+  const sideStoreURL =
+    "sidestore://install?url=" + encodeURIComponent(IPA_URL);
+
+  showStatus(
+    "SideStore wird geöffnet. Falls nichts passiert, ist SideStore " +
+    "auf diesem iPhone noch nicht eingerichtet."
+  );
+
+  window.location.href = sideStoreURL;
+});
+</script>
+</body>
+</html>
