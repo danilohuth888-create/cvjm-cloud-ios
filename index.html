@@ -7,180 +7,136 @@
 <title>CVJM Cloud</title>
 <style>
 :root{
-  --bg:#f3f5f7;
-  --card:#ffffff;
-  --text:#17191d;
-  --muted:#6d737c;
-  --accent:#e30613;
-  --accent-dark:#bd0010;
-  --border:#e5e7eb;
-  --soft:#f8f9fb;
+  --bg:#f3f5f7;--card:#fff;--text:#17191d;--muted:#6d737c;
+  --accent:#e30613;--accent-dark:#bd0010;--border:#e5e7eb;
+  --soft:#f8f9fb;--green:#16803b;--greenbg:#eaf8ef;--danger:#b42318;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
   min-height:100vh;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:
-    radial-gradient(circle at top, #ffffff 0, #f6f7f9 35%, var(--bg) 100%);
-  color:var(--text);
-  padding:22px;
+  background:radial-gradient(circle at top,#fff 0,#f6f7f9 35%,var(--bg) 100%);
+  color:var(--text);padding:22px
 }
-.page{
-  width:min(520px,100%);
-  margin:0 auto;
-  padding:22px 0 40px;
-}
+.page{width:min(520px,100%);margin:0 auto;padding:22px 0 40px}
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:26px;
-  padding:26px;
-  box-shadow:0 18px 50px rgba(20,24,31,.07);
+  background:var(--card);border:1px solid var(--border);border-radius:26px;padding:26px;
+  box-shadow:0 18px 50px rgba(20,24,31,.07)
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:24px;
-}
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:24px}
 .appicon{
-  width:68px;height:68px;border-radius:18px;
-  display:grid;place-items:center;
-  background:linear-gradient(145deg,#121417,#2a2d33);
-  color:#fff;
-  font-weight:800;
-  font-size:29px;
-  letter-spacing:-1px;
-  box-shadow:0 10px 24px rgba(0,0,0,.16);
+  width:68px;height:68px;border-radius:18px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#121417,#2a2d33);color:#fff;
+  font-weight:800;font-size:29px;letter-spacing:-1px;box-shadow:0 10px 24px rgba(0,0,0,.16)
 }
-.brandText strong{
-  display:block;
-  font-size:19px;
-  line-height:1.2;
-}
-.brandText span{
-  color:var(--muted);
-  font-size:14px;
-}
-h1{
-  margin:0;
-  font-size:34px;
-  line-height:1.08;
-  letter-spacing:-.8px;
-}
-.lead{
-  margin:12px 0 22px;
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.55;
-}
-.meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:22px;
-}
+.brandText strong{display:block;font-size:19px;line-height:1.2}
+.brandText span{color:var(--muted);font-size:14px}
+h1{margin:0;font-size:34px;line-height:1.08;letter-spacing:-.8px}
+h2{margin:0;font-size:25px;line-height:1.15}
+.lead{margin:12px 0 22px;color:var(--muted);font-size:17px;line-height:1.55}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .pill{
-  background:var(--soft);
-  border:1px solid var(--border);
-  border-radius:999px;
-  padding:7px 10px;
-  color:#4e545d;
-  font-size:13px;
+  background:var(--soft);border:1px solid var(--border);border-radius:999px;
+  padding:7px 10px;color:#4e545d;font-size:13px
 }
 .btn{
-  appearance:none;
-  border:0;
-  width:100%;
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  border-radius:15px;
-  padding:16px 18px;
-  font:inherit;
-  font-weight:750;
-  font-size:17px;
-  cursor:pointer;
-  transition:.15s ease;
+  appearance:none;border:0;width:100%;display:block;text-align:center;text-decoration:none;
+  border-radius:15px;padding:16px 18px;font:inherit;font-weight:750;font-size:17px;
+  cursor:pointer;transition:.15s ease
 }
 .btn:active{transform:scale(.99)}
-.primary{
-  background:var(--accent);
-  color:white;
-  box-shadow:0 10px 22px rgba(227,6,19,.20);
-}
+.primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px rgba(227,6,19,.20)}
 .primary:hover{background:var(--accent-dark)}
-.secondary{
-  margin-top:10px;
-  background:#f2f3f5;
-  color:#22262c;
-}
-.note{
-  margin-top:17px;
-  font-size:13px;
-  line-height:1.5;
-  color:#858b94;
-  text-align:center;
-}
+.secondary{margin-top:10px;background:#f2f3f5;color:#22262c}
 .status{
-  display:none;
-  margin-top:16px;
-  border-radius:15px;
-  padding:14px 15px;
-  background:#fff8e9;
-  border:1px solid #eed49a;
-  color:#6a531c;
-  line-height:1.5;
-  font-size:14px;
+  display:none;margin-top:16px;border-radius:15px;padding:14px 15px;
+  background:#fff8e9;border:1px solid #eed49a;color:#6a531c;
+  line-height:1.5;font-size:14px
 }
-.help{
-  margin-top:22px;
-  border-top:1px solid var(--border);
-  padding-top:20px;
-}
+.help{margin-top:22px;border-top:1px solid var(--border);padding-top:20px}
 .help button{
-  border:0;background:none;padding:0;
-  font:inherit;font-weight:700;color:#454a52;
-  cursor:pointer;
+  border:0;background:none;padding:0;font:inherit;font-weight:700;color:#454a52;cursor:pointer
 }
 .helpContent{
-  display:none;
-  margin-top:14px;
-  background:var(--soft);
-  border:1px solid var(--border);
-  border-radius:17px;
-  padding:16px;
+  display:none;margin-top:14px;background:var(--soft);border:1px solid var(--border);
+  border-radius:17px;padding:16px
 }
-.helpContent p{
-  margin:0 0 12px;
-  color:#5e646d;
-  font-size:14px;
-  line-height:1.55;
-}
-.helpContent p:last-child{margin-bottom:0}
-.smallLink{
-  color:#3f4650;
-  font-weight:700;
-  text-decoration:underline;
-  text-underline-offset:2px;
+.helpContent p{margin:0 0 12px;color:#5e646d;font-size:14px;line-height:1.55}
+.note{margin-top:17px;font-size:13px;line-height:1.5;color:#858b94;text-align:center}
+.desktop{
+  display:none;margin-top:16px;padding:14px;border-radius:14px;background:#f5f6f7;
+  color:#686e76;font-size:14px;line-height:1.5
 }
 .footer{
-  text-align:center;
-  color:#9aa0a8;
-  font-size:12px;
-  margin-top:18px;
+  text-align:center;color:#9aa0a8;font-size:12px;margin-top:18px;
+  user-select:none;-webkit-user-select:none;cursor:default;padding:8px
 }
-.desktop{
-  display:none;
-  margin-top:16px;
-  padding:14px;
-  border-radius:14px;
-  background:#f5f6f7;
-  color:#686e76;
-  font-size:14px;
-  line-height:1.5;
+
+/* Admin */
+.overlay{
+  display:none;position:fixed;inset:0;background:rgba(9,12,18,.58);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  z-index:100;padding:16px;overflow-y:auto
 }
+.overlay.show{display:flex;align-items:center;justify-content:center}
+.admin{
+  width:min(540px,100%);background:#fff;border-radius:26px;padding:24px;
+  box-shadow:0 28px 90px rgba(0,0,0,.3);max-height:calc(100vh - 32px);overflow:auto
+}
+.adminTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.adminLead{margin:7px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
+.close{
+  flex:0 0 40px;width:40px;height:40px;border:0;border-radius:50%;
+  background:#f1f2f4;font-size:23px;cursor:pointer;color:#333
+}
+.label{display:block;margin:18px 0 7px;font-size:13px;font-weight:750;color:#353a42}
+.input{
+  width:100%;border:1px solid var(--border);border-radius:14px;padding:14px 15px;
+  font:inherit;font-size:16px;outline:none;background:#fff;color:#17191d
+}
+.input:focus{border-color:#a8b0bc;box-shadow:0 0 0 4px #f1f3f6}
+.tokenRow{position:relative}
+.tokenRow .input{padding-right:76px}
+.showToken{
+  position:absolute;right:8px;top:8px;border:0;border-radius:10px;
+  background:#f1f2f4;padding:7px 9px;font:inherit;font-size:12px;font-weight:700;cursor:pointer
+}
+.drop{
+  margin-top:17px;border:2px dashed #c9ced6;border-radius:20px;padding:30px 18px;
+  text-align:center;background:#fafbfc;cursor:pointer;transition:.15s ease
+}
+.drop.drag{border-color:var(--accent);background:#fff5f6}
+.dropIcon{font-size:42px;margin-bottom:7px}
+.drop strong{display:block;font-size:17px}
+.drop span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+.fileBox{
+  display:none;margin-top:12px;padding:13px 14px;border-radius:14px;
+  background:#f3f5f7;font-size:14px;word-break:break-word
+}
+.fileBox.show{display:block}
+.deploy{margin-top:14px}
+.deploy:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.adminStatus{
+  display:none;margin-top:14px;padding:13px 14px;border-radius:14px;
+  background:#f4f6f8;color:#4d535c;font-size:14px;line-height:1.45
+}
+.adminStatus.show{display:block}
+.adminStatus.ok{background:var(--greenbg);color:#166534}
+.adminStatus.err{background:#fff0ef;color:var(--danger)}
+.progress{
+  display:none;margin-top:13px;height:8px;border-radius:999px;background:#eceef2;overflow:hidden
+}
+.progress.show{display:block}
+.bar{height:100%;width:0;background:var(--accent);transition:width .25s ease}
+.details{
+  margin-top:18px;border-top:1px solid var(--border);padding-top:16px
+}
+.details summary{cursor:pointer;font-weight:700;color:#4a5059;font-size:14px}
+.details p,.details li{color:#686f78;font-size:13px;line-height:1.5}
+.details ul{padding-left:19px}
+.smallLink{color:#3d4651;font-weight:700}
+.tiny{text-align:center;font-size:11px;color:#a1a6ae;margin-top:15px}
 </style>
 </head>
 <body>
@@ -201,7 +157,7 @@ h1{
     </p>
 
     <div class="meta">
-      <span class="pill">Version 2.14.0</span>
+      <span class="pill" id="versionPill">Version 2.14.0</span>
       <span class="pill">iPhone</span>
       <span class="pill">kostenlos</span>
     </div>
@@ -215,78 +171,450 @@ h1{
 
     <div class="help">
       <button id="helpToggle">Installation klappt nicht?</button>
-
       <div class="helpContent" id="helpContent">
         <p>
-          Für die Installation braucht dein iPhone einmalig eine kleine
-          Installationshilfe. Danach kannst du CVJM Cloud direkt über diese
-          Seite installieren und aktualisieren.
+          Für die Installation braucht dein iPhone einmalig SideStore.
+          Danach kannst du CVJM Cloud direkt über diese Seite installieren.
         </p>
-
         <a class="btn secondary"
            href="https://docs.sidestore.io/docs/installation/install"
            target="_blank" rel="noopener">
           Einmalige Einrichtung starten
         </a>
-
-        <p style="margin-top:13px">
-          Danach kommst du einfach wieder auf diese Seite und tippst erneut
-          auf <b>„App installieren“</b>.
-        </p>
       </div>
     </div>
 
-    <div class="note">
-      Keine Registrierung auf dieser Seite. Keine Werbung.
-    </div>
+    <div class="note">Keine Werbung. Keine Registrierung auf dieser Seite.</div>
   </main>
 
-  <div class="footer">CVJM Cloud · iOS</div>
+  <div class="footer" id="secretFooter">CVJM Cloud · iOS</div>
+</div>
+
+<div class="overlay" id="adminOverlay">
+  <section class="admin">
+    <div class="adminTop">
+      <div>
+        <h2>Neue IPA veröffentlichen</h2>
+        <p class="adminLead">
+          Datei reinziehen und auf „Veröffentlichen“ drücken.
+        </p>
+      </div>
+      <button class="close" id="closeAdmin" aria-label="Schließen">×</button>
+    </div>
+
+    <label class="label" for="versionInput">Version</label>
+    <input class="input" id="versionInput" autocomplete="off" placeholder="z. B. 2.15.0">
+
+    <label class="label" for="tokenInput">GitHub-Schlüssel</label>
+    <div class="tokenRow">
+      <input class="input" id="tokenInput" type="password" autocomplete="off"
+             placeholder="github_pat_...">
+      <button class="showToken" id="showToken" type="button">Anzeigen</button>
+    </div>
+
+    <div class="drop" id="dropZone">
+      <div class="dropIcon">📦</div>
+      <strong>IPA hier hineinziehen</strong>
+      <span>oder antippen und Datei auswählen</span>
+      <input id="fileInput" type="file" accept=".ipa,application/octet-stream" hidden>
+    </div>
+
+    <div class="fileBox" id="fileBox"></div>
+
+    <button class="btn primary deploy" id="deployBtn" disabled>Veröffentlichen</button>
+    <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
+    <div class="adminStatus" id="adminStatus"></div>
+
+    <details class="details">
+      <summary>GitHub-Schlüssel noch nicht eingerichtet?</summary>
+      <p>Das brauchst du nur einmal. Erstelle bei GitHub einen <b>Fine-grained personal access token</b>.</p>
+      <ul>
+        <li>Nur Repository: <b>cvjm-cloud-ios</b></li>
+        <li>Berechtigung: <b>Contents → Read and write</b></li>
+      </ul>
+      <p>
+        <a class="smallLink"
+           href="https://github.com/settings/personal-access-tokens/new"
+           target="_blank" rel="noopener">
+          GitHub-Schlüssel erstellen
+        </a>
+      </p>
+      <p>
+        Der Schlüssel wird <b>nicht in dieser HTML-Datei gespeichert</b>.
+        Er bleibt nur in diesem Browser-Tab, solange die Seite geöffnet ist.
+      </p>
+    </details>
+
+    <div class="tiny">
+      Versteckter Bereich: 3× auf „CVJM Cloud · iOS“ tippen.
+    </div>
+  </section>
 </div>
 
 <script>
-const IPA_URL =
-  "https://github.com/danilohuth888-create/cvjm-cloud-ios/releases/latest/download/CVJM-Cloud-iOS-2.14.0.ipa";
+const OWNER = "danilohuth888-create";
+const REPO = "cvjm-cloud-ios";
+const BRANCH = "main";
+const IPA_PATH = "downloads/CVJM-Cloud-iOS.ipa";
+const META_PATH = "downloads/latest.json";
+
+const RAW_IPA =
+  `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${IPA_PATH}`;
+const API_CONTENTS =
+  `https://api.github.com/repos/${OWNER}/${REPO}/contents/`;
+
+const FALLBACK_IPA =
+  "https://github.com/danilohuth888-create/cvjm-cloud-ios/releases/download/v2.14.0/CVJM-Cloud-iOS-2.14.0.ipa";
+
+let ipaUrl = FALLBACK_IPA;
+let selectedFile = null;
 
 const installBtn = document.getElementById("installBtn");
-const status = document.getElementById("status");
+const statusBox = document.getElementById("status");
 const desktopInfo = document.getElementById("desktopInfo");
 const helpToggle = document.getElementById("helpToggle");
 const helpContent = document.getElementById("helpContent");
+const versionPill = document.getElementById("versionPill");
+
+const footer = document.getElementById("secretFooter");
+const overlay = document.getElementById("adminOverlay");
+const closeAdmin = document.getElementById("closeAdmin");
+const versionInput = document.getElementById("versionInput");
+const tokenInput = document.getElementById("tokenInput");
+const showToken = document.getElementById("showToken");
+const dropZone = document.getElementById("dropZone");
+const fileInput = document.getElementById("fileInput");
+const fileBox = document.getElementById("fileBox");
+const deployBtn = document.getElementById("deployBtn");
+const adminStatus = document.getElementById("adminStatus");
+const progress = document.getElementById("progress");
+const bar = document.getElementById("bar");
 
 const isiPhone = /iPhone|iPod/i.test(navigator.userAgent);
 const isiPad = /iPad/i.test(navigator.userAgent) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-if (!isiPhone && !isiPad) {
-  desktopInfo.style.display = "block";
-}
+if (!isiPhone && !isiPad) desktopInfo.style.display = "block";
 
 helpToggle.addEventListener("click", () => {
   helpContent.style.display =
     helpContent.style.display === "block" ? "none" : "block";
 });
 
-installBtn.addEventListener("click", () => {
+/* Prüfen, ob bereits eine über den Admin-Bereich hochgeladene IPA existiert. */
+async function loadCurrentApp() {
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${META_PATH}?ref=${BRANCH}&t=${Date.now()}`,
+      {headers: {"Accept":"application/vnd.github+json"}, cache:"no-store"}
+    );
+
+    if (r.ok) {
+      const data = await r.json();
+      const text = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))));
+      const meta = JSON.parse(text);
+
+      ipaUrl = RAW_IPA + "?v=" + encodeURIComponent(meta.updatedAt || Date.now());
+      if (meta.version) versionPill.textContent = "Version " + meta.version;
+      return;
+    }
+  } catch (e) {
+    console.warn("Meta konnte nicht geladen werden:", e);
+  }
+
+  // Falls noch keine Admin-Version existiert, bleibt die bisherige Release-IPA aktiv.
+  ipaUrl = FALLBACK_IPA;
+}
+
+installBtn.addEventListener("click", async () => {
   if (!isiPhone && !isiPad) {
     desktopInfo.style.display = "block";
-    desktopInfo.scrollIntoView({behavior:"smooth", block:"center"});
+    desktopInfo.scrollIntoView({behavior:"smooth",block:"center"});
     return;
   }
 
-  status.style.display = "block";
-  status.textContent = "Installation wird geöffnet …";
+  statusBox.style.display = "block";
+  statusBox.textContent = "Installation wird geöffnet …";
 
-  const sideStoreURL =
-    "sidestore://install?url=" + encodeURIComponent(IPA_URL);
-
-  window.location.href = sideStoreURL;
+  window.location.href =
+    "sidestore://install?url=" + encodeURIComponent(ipaUrl);
 
   setTimeout(() => {
-    status.innerHTML =
+    statusBox.innerHTML =
       'Falls nichts passiert, tippe unten auf <b>„Installation klappt nicht?“</b>.';
   }, 1800);
 });
+
+/* Genau 3 Klicks/Taps innerhalb von 2 Sekunden öffnen das Deploy-Feld. */
+let footerClicks = 0;
+let footerTimer = null;
+
+footer.addEventListener("click", () => {
+  footerClicks++;
+  clearTimeout(footerTimer);
+
+  footerTimer = setTimeout(() => {
+    footerClicks = 0;
+  }, 2000);
+
+  if (footerClicks >= 3) {
+    footerClicks = 0;
+    clearTimeout(footerTimer);
+
+    const saved = sessionStorage.getItem("cvjmGithubToken");
+    if (saved) tokenInput.value = saved;
+
+    overlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+});
+
+function closePanel() {
+  overlay.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+closeAdmin.addEventListener("click", closePanel);
+overlay.addEventListener("click", e => {
+  if (e.target === overlay) closePanel();
+});
+
+showToken.addEventListener("click", () => {
+  const visible = tokenInput.type === "text";
+  tokenInput.type = visible ? "password" : "text";
+  showToken.textContent = visible ? "Anzeigen" : "Verbergen";
+});
+
+dropZone.addEventListener("click", () => fileInput.click());
+
+["dragenter","dragover"].forEach(name => {
+  dropZone.addEventListener(name, e => {
+    e.preventDefault();
+    dropZone.classList.add("drag");
+  });
+});
+
+["dragleave","drop"].forEach(name => {
+  dropZone.addEventListener(name, e => {
+    e.preventDefault();
+    dropZone.classList.remove("drag");
+  });
+});
+
+dropZone.addEventListener("drop", e => {
+  chooseFile(e.dataTransfer.files?.[0]);
+});
+
+fileInput.addEventListener("change", () => {
+  chooseFile(fileInput.files?.[0]);
+});
+
+function chooseFile(file) {
+  clearAdminMessage();
+
+  if (!file) return;
+
+  if (!file.name.toLowerCase().endsWith(".ipa")) {
+    selectedFile = null;
+    fileBox.classList.add("show");
+    fileBox.textContent = "Bitte eine .ipa-Datei auswählen.";
+    deployBtn.disabled = true;
+    return;
+  }
+
+  selectedFile = file;
+
+  const guessed = file.name.match(/(\d+\.\d+(?:\.\d+)?)/);
+  if (guessed && !versionInput.value.trim()) {
+    versionInput.value = guessed[1];
+  }
+
+  const mb = (file.size / 1024 / 1024).toFixed(2);
+  fileBox.classList.add("show");
+  fileBox.textContent = `${file.name} · ${mb} MB`;
+  deployBtn.disabled = false;
+}
+
+function showAdminMessage(message, type = "") {
+  adminStatus.className = "adminStatus show" + (type ? " " + type : "");
+  adminStatus.textContent = message;
+}
+
+function clearAdminMessage() {
+  adminStatus.className = "adminStatus";
+  adminStatus.textContent = "";
+}
+
+function setProgress(percent) {
+  progress.classList.add("show");
+  bar.style.width = percent + "%";
+}
+
+/* ArrayBuffer → Base64 ohne Call-Stack-Probleme bei größeren Dateien */
+function arrayBufferToBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  const chunk = 0x8000;
+  let binary = "";
+
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode.apply(
+      null,
+      bytes.subarray(i, Math.min(i + chunk, bytes.length))
+    );
+  }
+
+  return btoa(binary);
+}
+
+function textToBase64(text) {
+  return btoa(unescape(encodeURIComponent(text)));
+}
+
+async function getExistingSha(path, token) {
+  const r = await fetch(
+    `${API_CONTENTS}${path}?ref=${encodeURIComponent(BRANCH)}&t=${Date.now()}`,
+    {
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": `Bearer ${token}`
+      },
+      cache: "no-store"
+    }
+  );
+
+  if (r.status === 404) return null;
+
+  if (!r.ok) {
+    const error = await r.json().catch(() => ({}));
+    throw new Error(error.message || `GitHub-Fehler ${r.status}`);
+  }
+
+  const data = await r.json();
+  return data.sha || null;
+}
+
+async function putFile(path, base64Content, message, token) {
+  const sha = await getExistingSha(path, token);
+
+  const body = {
+    message,
+    content: base64Content,
+    branch: BRANCH
+  };
+
+  if (sha) body.sha = sha;
+
+  const r = await fetch(`${API_CONTENTS}${path}`, {
+    method: "PUT",
+    headers: {
+      "Accept": "application/vnd.github+json",
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+
+  const data = await r.json().catch(() => ({}));
+
+  if (!r.ok) {
+    throw new Error(data.message || `GitHub-Fehler ${r.status}`);
+  }
+
+  return data;
+}
+
+deployBtn.addEventListener("click", async () => {
+  clearAdminMessage();
+
+  const token = tokenInput.value.trim();
+  const version = versionInput.value.trim();
+
+  if (!selectedFile) {
+    showAdminMessage("Bitte zuerst eine IPA auswählen.", "err");
+    return;
+  }
+
+  if (!token) {
+    showAdminMessage("Bitte deinen GitHub-Schlüssel eingeben.", "err");
+    tokenInput.focus();
+    return;
+  }
+
+  if (!version) {
+    showAdminMessage("Bitte die Versionsnummer eintragen.", "err");
+    versionInput.focus();
+    return;
+  }
+
+  deployBtn.disabled = true;
+  deployBtn.textContent = "Wird veröffentlicht …";
+  setProgress(8);
+  showAdminMessage("IPA wird vorbereitet …");
+
+  try {
+    // Nur für diesen Browser-Tab merken.
+    sessionStorage.setItem("cvjmGithubToken", token);
+
+    const buffer = await selectedFile.arrayBuffer();
+    setProgress(25);
+
+    const ipaBase64 = arrayBufferToBase64(buffer);
+    setProgress(45);
+
+    showAdminMessage("IPA wird zu GitHub hochgeladen …");
+
+    await putFile(
+      IPA_PATH,
+      ipaBase64,
+      `CVJM Cloud iOS ${version}`,
+      token
+    );
+
+    setProgress(78);
+    showAdminMessage("Version wird aktualisiert …");
+
+    const meta = {
+      version,
+      originalName: selectedFile.name,
+      updatedAt: new Date().toISOString()
+    };
+
+    await putFile(
+      META_PATH,
+      textToBase64(JSON.stringify(meta, null, 2)),
+      `Update CVJM Cloud version to ${version}`,
+      token
+    );
+
+    setProgress(100);
+
+    ipaUrl = RAW_IPA + "?v=" + encodeURIComponent(meta.updatedAt);
+    versionPill.textContent = "Version " + version;
+
+    showAdminMessage(
+      "Fertig! Version " + version + " ist jetzt die aktuelle IPA.",
+      "ok"
+    );
+
+    selectedFile = null;
+    fileInput.value = "";
+    fileBox.classList.remove("show");
+    versionInput.value = "";
+
+  } catch (error) {
+    console.error(error);
+    showAdminMessage(
+      error.message || "Upload fehlgeschlagen.",
+      "err"
+    );
+    setProgress(0);
+  } finally {
+    deployBtn.textContent = "Veröffentlichen";
+    deployBtn.disabled = !selectedFile;
+  }
+});
+
+loadCurrentApp();
 </script>
 </body>
 </html>
