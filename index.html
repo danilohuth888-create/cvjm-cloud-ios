@@ -3,335 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>CVJM Cloud installieren</title>
+<meta name="theme-color" content="#ffffff">
+<title>CVJM Cloud</title>
 <style>
 :root{
-  --bg:#f4f7fb;
+  --bg:#f3f5f7;
   --card:#ffffff;
-  --text:#111827;
-  --muted:#667085;
-  --blue:#0a66ff;
-  --blueSoft:#eaf2ff;
-  --green:#16a34a;
-  --yellow:#fff7d6;
+  --text:#17191d;
+  --muted:#6d737c;
+  --accent:#e30613;
+  --accent-dark:#bd0010;
   --border:#e5e7eb;
+  --soft:#f8f9fb;
 }
 *{box-sizing:border-box}
+html,body{margin:0;padding:0}
 body{
-  margin:0;
   min-height:100vh;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top, #ffffff 0, #f6f7f9 35%, var(--bg) 100%);
   color:var(--text);
-  padding:18px;
+  padding:22px;
 }
-.wrap{
+.page{
   width:min(520px,100%);
   margin:0 auto;
+  padding:22px 0 40px;
 }
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:28px;
-  padding:24px;
-  box-shadow:0 18px 55px rgba(16,24,40,.08);
+  border-radius:26px;
+  padding:26px;
+  box-shadow:0 18px 50px rgba(20,24,31,.07);
 }
-.logo{
-  width:78px;height:78px;border-radius:22px;
-  background:#111;color:#fff;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:24px;
+}
+.appicon{
+  width:68px;height:68px;border-radius:18px;
   display:grid;place-items:center;
-  font-size:36px;font-weight:800;
-  margin-bottom:16px;
+  background:linear-gradient(145deg,#121417,#2a2d33);
+  color:#fff;
+  font-weight:800;
+  font-size:29px;
+  letter-spacing:-1px;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
 }
-h1{font-size:30px;line-height:1.1;margin:0 0 8px}
-h2{font-size:24px;line-height:1.2;margin:0 0 12px}
-p{font-size:17px;line-height:1.5;color:var(--muted);margin:8px 0}
-.bigQuestion{
-  margin-top:24px;
-  padding:18px;
-  border-radius:20px;
-  background:#f9fafb;
-  border:1px solid var(--border);
-}
-button,a.btn{
-  width:100%;
-  border:0;
+.brandText strong{
   display:block;
-  text-decoration:none;
-  text-align:center;
-  padding:17px 18px;
-  border-radius:16px;
-  font:inherit;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
-  margin-top:12px;
+  font-size:19px;
+  line-height:1.2;
 }
-.primary{background:var(--blue);color:#fff}
-.secondary{background:var(--blueSoft);color:#174ea6}
-.gray{background:#f3f4f6;color:#111827}
-.ok{background:#eaf8ef;color:#166534}
-.device{
-  display:inline-block;
-  padding:7px 11px;
-  border-radius:999px;
-  background:#111827;
-  color:white;
+.brandText span{
+  color:var(--muted);
   font-size:14px;
-  font-weight:800;
-  margin-bottom:12px;
 }
-.step{
-  display:none;
-  margin-top:22px;
-  padding:22px;
-  border-radius:22px;
+h1{
+  margin:0;
+  font-size:34px;
+  line-height:1.08;
+  letter-spacing:-.8px;
+}
+.lead{
+  margin:12px 0 22px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.55;
+}
+.meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+}
+.pill{
+  background:var(--soft);
   border:1px solid var(--border);
-  background:#fff;
-}
-.step.active{display:block}
-.stepNr{
-  font-size:14px;
-  font-weight:800;
-  color:var(--blue);
-  margin-bottom:6px;
-}
-.bigIcon{
-  font-size:46px;
-  line-height:1;
-  margin:5px 0 14px;
-}
-.tip{
-  margin-top:16px;
-  background:var(--yellow);
-  border:1px solid #f2d66f;
-  border-radius:16px;
-  padding:14px;
-  color:#5f4b00;
-  font-size:15px;
-  line-height:1.5;
-}
-.progress{
-  height:8px;
-  background:#e9edf3;
   border-radius:999px;
-  overflow:hidden;
-  margin:18px 0 4px;
+  padding:7px 10px;
+  color:#4e545d;
+  font-size:13px;
 }
-.progress > div{
-  height:100%;
-  width:0;
-  background:var(--blue);
-  transition:width .2s ease;
+.btn{
+  appearance:none;
+  border:0;
+  width:100%;
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  border-radius:15px;
+  padding:16px 18px;
+  font:inherit;
+  font-weight:750;
+  font-size:17px;
+  cursor:pointer;
+  transition:.15s ease;
+}
+.btn:active{transform:scale(.99)}
+.primary{
+  background:var(--accent);
+  color:white;
+  box-shadow:0 10px 22px rgba(227,6,19,.20);
+}
+.primary:hover{background:var(--accent-dark)}
+.secondary{
+  margin-top:10px;
+  background:#f2f3f5;
+  color:#22262c;
+}
+.note{
+  margin-top:17px;
+  font-size:13px;
+  line-height:1.5;
+  color:#858b94;
+  text-align:center;
 }
 .status{
   display:none;
-  margin-top:14px;
-  padding:14px;
-  border-radius:14px;
-  background:#fff7e8;
-  border:1px solid #efd39a;
-  color:#6c5314;
+  margin-top:16px;
+  border-radius:15px;
+  padding:14px 15px;
+  background:#fff8e9;
+  border:1px solid #eed49a;
+  color:#6a531c;
   line-height:1.5;
+  font-size:14px;
 }
-.small{
-  font-size:13px;
-  color:#98a2b3;
+.help{
+  margin-top:22px;
+  border-top:1px solid var(--border);
+  padding-top:20px;
+}
+.help button{
+  border:0;background:none;padding:0;
+  font:inherit;font-weight:700;color:#454a52;
+  cursor:pointer;
+}
+.helpContent{
+  display:none;
+  margin-top:14px;
+  background:var(--soft);
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:16px;
+}
+.helpContent p{
+  margin:0 0 12px;
+  color:#5e646d;
+  font-size:14px;
+  line-height:1.55;
+}
+.helpContent p:last-child{margin-bottom:0}
+.smallLink{
+  color:#3f4650;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.footer{
   text-align:center;
+  color:#9aa0a8;
+  font-size:12px;
   margin-top:18px;
 }
-.hidden{display:none!important}
+.desktop{
+  display:none;
+  margin-top:16px;
+  padding:14px;
+  border-radius:14px;
+  background:#f5f6f7;
+  color:#686e76;
+  font-size:14px;
+  line-height:1.5;
+}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
   <main class="card">
-    <div class="logo">C</div>
-    <h1>CVJM Cloud</h1>
-    <p>Wir machen das ganz einfach. Du bekommst immer nur <b>einen Schritt</b> angezeigt.</p>
-
-    <div class="bigQuestion" id="startBox">
-      <h2>Ist SideStore schon auf deinem iPhone?</h2>
-      <button class="primary" onclick="alreadyReady()">✅ Ja, SideStore ist da</button>
-      <button class="secondary" onclick="startSetup()">❓ Nein / Ich weiß es nicht</button>
+    <div class="brand">
+      <div class="appicon">C</div>
+      <div class="brandText">
+        <strong>CVJM Cloud</strong>
+        <span>für iPhone</span>
+      </div>
     </div>
 
-    <div class="progress hidden" id="progressWrap"><div id="progressBar"></div></div>
+    <h1>CVJM Cloud<br>auf deinem iPhone</h1>
+    <p class="lead">
+      Installiere die CVJM Cloud als App auf deinem iPhone.
+      Einmal antippen – den Rest übernimmt dein Gerät.
+    </p>
 
-    <section class="step" data-step="1">
-      <span class="device">📱 JETZT AM iPHONE</span>
-      <div class="stepNr">Schritt 1 von 7</div>
-      <div class="bigIcon">🛡️</div>
-      <h2>LocalDevVPN installieren</h2>
-      <p>Öffne den App Store und installiere <b>LocalDevVPN</b>.</p>
-      <a class="btn primary" href="https://docs.sidestore.io/docs/installation/prerequisites" target="_blank" rel="noopener">LocalDevVPN finden</a>
-      <button class="ok" onclick="nextStep()">✅ Habe ich installiert</button>
-    </section>
+    <div class="meta">
+      <span class="pill">Version 2.14.0</span>
+      <span class="pill">iPhone</span>
+      <span class="pill">kostenlos</span>
+    </div>
 
-    <section class="step" data-step="2">
-      <span class="device">💻 JETZT AM PC</span>
-      <div class="stepNr">Schritt 2 von 7</div>
-      <div class="bigIcon">⬇️</div>
-      <h2>iloader herunterladen</h2>
-      <p>Am Windows-PC brauchst du einmal <b>iloader</b>. Damit kommt SideStore auf dein iPhone.</p>
-      <a class="btn primary" href="https://docs.sidestore.io/docs/installation/install" target="_blank" rel="noopener">iloader herunterladen</a>
-      <button class="ok" onclick="nextStep()">✅ Habe ich</button>
-    </section>
+    <button class="btn primary" id="installBtn">App installieren</button>
 
-    <section class="step" data-step="3">
-      <span class="device">🔌 PC + iPHONE</span>
-      <div class="stepNr">Schritt 3 von 7</div>
-      <div class="bigIcon">🔗</div>
-      <h2>iPhone mit Kabel verbinden</h2>
-      <p>Stecke dein iPhone an den PC.</p>
-      <p>Wenn auf dem iPhone <b>„Diesem Computer vertrauen?“</b> erscheint:</p>
-      <p><b>→ Vertrauen drücken.</b></p>
-      <button class="ok" onclick="nextStep()">✅ Verbunden</button>
-    </section>
+    <div class="status" id="status"></div>
+    <div class="desktop" id="desktopInfo">
+      Öffne diese Seite auf deinem iPhone, um die App zu installieren.
+    </div>
 
-    <section class="step" data-step="4">
-      <span class="device">💻 JETZT AM PC</span>
-      <div class="stepNr">Schritt 4 von 7</div>
-      <div class="bigIcon">📦</div>
-      <h2>SideStore installieren</h2>
-      <p>Öffne <b>iloader</b>.</p>
-      <p>Dann:</p>
-      <p><b>1.</b> Apple-ID anmelden<br>
-         <b>2.</b> dein iPhone auswählen<br>
-         <b>3.</b> „Install SideStore (Stable)“ drücken</p>
-      <div class="tip">Danach sollte die SideStore-App auf deinem iPhone auftauchen.</div>
-      <button class="ok" onclick="nextStep()">✅ SideStore ist auf dem iPhone</button>
-    </section>
+    <div class="help">
+      <button id="helpToggle">Installation klappt nicht?</button>
 
-    <section class="step" data-step="5">
-      <span class="device">📱 JETZT AM iPHONE</span>
-      <div class="stepNr">Schritt 5 von 7</div>
-      <div class="bigIcon">⚙️</div>
-      <h2>SideStore erlauben</h2>
-      <p>Öffne:</p>
-      <p><b>Einstellungen → Allgemein → VPN & Geräteverwaltung</b></p>
-      <p>Dort deine Apple-ID auswählen und <b>Vertrauen</b> drücken.</p>
-      <div class="tip">Falls iOS nach dem <b>Entwicklermodus</b> fragt: einschalten und den Neustart bestätigen.</div>
-      <button class="ok" onclick="nextStep()">✅ Erledigt</button>
-    </section>
+      <div class="helpContent" id="helpContent">
+        <p>
+          Für die Installation braucht dein iPhone einmalig eine kleine
+          Installationshilfe. Danach kannst du CVJM Cloud direkt über diese
+          Seite installieren und aktualisieren.
+        </p>
 
-    <section class="step" data-step="6">
-      <span class="device">📱 JETZT AM iPHONE</span>
-      <div class="stepNr">Schritt 6 von 7</div>
-      <div class="bigIcon">🟢</div>
-      <h2>LocalDevVPN einschalten</h2>
-      <p>Öffne <b>LocalDevVPN</b> und drücke auf <b>Connect</b>.</p>
-      <button class="ok" onclick="nextStep()">✅ VPN ist verbunden</button>
-    </section>
+        <a class="btn secondary"
+           href="https://docs.sidestore.io/docs/installation/install"
+           target="_blank" rel="noopener">
+          Einmalige Einrichtung starten
+        </a>
 
-    <section class="step" data-step="7">
-      <span class="device">📱 JETZT AM iPHONE</span>
-      <div class="stepNr">Letzter Schritt</div>
-      <div class="bigIcon">🎉</div>
-      <h2>Jetzt CVJM Cloud installieren</h2>
-      <p>Super. Jetzt drückst du nur noch auf den blauen Knopf.</p>
-      <button class="primary" onclick="installApp()">CVJM Cloud installieren</button>
-      <div class="status" id="status"></div>
-      <button class="gray" onclick="goBack()">← Einen Schritt zurück</button>
-    </section>
+        <p style="margin-top:13px">
+          Danach kommst du einfach wieder auf diese Seite und tippst erneut
+          auf <b>„App installieren“</b>.
+        </p>
+      </div>
+    </div>
 
-    <section class="step" id="readyStep">
-      <span class="device">📱 iPHONE</span>
-      <div class="bigIcon">✅</div>
-      <h2>Perfekt. Dann bist du fertig vorbereitet.</h2>
-      <p>Drücke einfach auf:</p>
-      <button class="primary" onclick="installApp()">CVJM Cloud installieren</button>
-      <div class="status" id="statusReady"></div>
-      <button class="gray" onclick="resetAll()">← Zurück</button>
-    </section>
-
-    <div class="small">CVJM Cloud · einfache Installationshilfe</div>
+    <div class="note">
+      Keine Registrierung auf dieser Seite. Keine Werbung.
+    </div>
   </main>
+
+  <div class="footer">CVJM Cloud · iOS</div>
 </div>
 
 <script>
 const IPA_URL =
   "https://github.com/danilohuth888-create/cvjm-cloud-ios/releases/latest/download/CVJM-Cloud-iOS-2.14.0.ipa";
 
-let currentStep = 0;
-const totalSteps = 7;
+const installBtn = document.getElementById("installBtn");
+const status = document.getElementById("status");
+const desktopInfo = document.getElementById("desktopInfo");
+const helpToggle = document.getElementById("helpToggle");
+const helpContent = document.getElementById("helpContent");
 
-function hideEverything(){
-  document.querySelectorAll(".step").forEach(el=>el.classList.remove("active"));
-  document.getElementById("readyStep").classList.remove("active");
+const isiPhone = /iPhone|iPod/i.test(navigator.userAgent);
+const isiPad = /iPad/i.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (!isiPhone && !isiPad) {
+  desktopInfo.style.display = "block";
 }
 
-function startSetup(){
-  document.getElementById("startBox").classList.add("hidden");
-  document.getElementById("progressWrap").classList.remove("hidden");
-  currentStep = 1;
-  showStep();
-}
+helpToggle.addEventListener("click", () => {
+  helpContent.style.display =
+    helpContent.style.display === "block" ? "none" : "block";
+});
 
-function alreadyReady(){
-  document.getElementById("startBox").classList.add("hidden");
-  document.getElementById("progressWrap").classList.add("hidden");
-  hideEverything();
-  document.getElementById("readyStep").classList.add("active");
-}
-
-function showStep(){
-  hideEverything();
-  const el = document.querySelector('[data-step="'+currentStep+'"]');
-  if(el) el.classList.add("active");
-  const pct = (currentStep/totalSteps)*100;
-  document.getElementById("progressBar").style.width = pct+"%";
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function nextStep(){
-  if(currentStep < totalSteps){
-    currentStep++;
-    showStep();
-  }
-}
-
-function goBack(){
-  if(currentStep > 1){
-    currentStep--;
-    showStep();
-  } else {
-    resetAll();
-  }
-}
-
-function resetAll(){
-  currentStep=0;
-  hideEverything();
-  document.getElementById("startBox").classList.remove("hidden");
-  document.getElementById("progressWrap").classList.add("hidden");
-  document.getElementById("progressBar").style.width="0";
-}
-
-function installApp(){
-  const isiPhone = /iPhone|iPod/i.test(navigator.userAgent);
-  const isiPad = /iPad/i.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-  const box = document.getElementById("readyStep").classList.contains("active")
-    ? document.getElementById("statusReady")
-    : document.getElementById("status");
-
-  if(!isiPhone && !isiPad){
-    box.style.display="block";
-    box.textContent="Diese Installation funktioniert nur auf einem iPhone oder iPad.";
+installBtn.addEventListener("click", () => {
+  if (!isiPhone && !isiPad) {
+    desktopInfo.style.display = "block";
+    desktopInfo.scrollIntoView({behavior:"smooth", block:"center"});
     return;
   }
 
-  box.style.display="block";
-  box.textContent="SideStore wird jetzt geöffnet …";
-  const url="sidestore://install?url="+encodeURIComponent(IPA_URL);
-  window.location.href=url;
+  status.style.display = "block";
+  status.textContent = "Installation wird geöffnet …";
 
-  setTimeout(()=>{
-    box.textContent="Falls nichts passiert: SideStore ist noch nicht richtig eingerichtet.";
-  },1800);
-}
+  const sideStoreURL =
+    "sidestore://install?url=" + encodeURIComponent(IPA_URL);
+
+  window.location.href = sideStoreURL;
+
+  setTimeout(() => {
+    status.innerHTML =
+      'Falls nichts passiert, tippe unten auf <b>„Installation klappt nicht?“</b>.';
+  }, 1800);
+});
 </script>
 </body>
 </html>
